@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         //Button botao_cadastrar = findViewById(R.id.botaoCadastrar);
         Button botao_entrar = findViewById(R.id.botaoEntrar);
         Button botao_cadastrar = findViewById(R.id.botaoCadastro);
-        Button botao_finalizar_cadastro = findViewById(R.id.botaoFinalizarCadastro);
+
 
 
         botao_cadastrar.setOnClickListener(new View.OnClickListener() {

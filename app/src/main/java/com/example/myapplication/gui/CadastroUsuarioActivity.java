@@ -48,7 +48,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
 
                 //nCpf.setInputType(InputType.TYPE_CLASS_NUMBER);
 
-                boolean valido = validacao(nNome, nCpf, nDataNascimento, nTelefone, nEndereco, nEmail, nSenha, nConfirmaSenha);
+                boolean valido = validacao(nNome, nDataNascimento, nCpf, nTelefone, nEndereco, nEmail, nSenha, nConfirmaSenha);
                 if (valido){
                 Usuario usuario = new Usuario();
                 preencheObjeto(usuario);
@@ -68,7 +68,6 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
 
 
                 boolean teveCampoVazio = false;
-                boolean senhasIguais = false;
                 String txtNome = nNome.getText().toString().trim();
                 String txtDataNascimento= nDataNascimento.getText().toString().trim();
                 String txtCpf= nCpf.getText().toString().trim();
@@ -95,6 +94,16 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                     nCpf.setError("Preencha o Campo.");
                     teveCampoVazio = true;
 
+                }
+                if ((nCpf.equals("00000000000") ||
+                        nCpf.equals("11111111111") ||
+                        nCpf.equals("22222222222") || nCpf.equals("33333333333") ||
+                        nCpf.equals("44444444444") || nCpf.equals("55555555555") ||
+                        nCpf.equals("66666666666") || nCpf.equals("77777777777") ||
+                        nCpf.equals("88888888888") || nCpf.equals("99999999999") ||
+                        (nCpf.length() != 11))){
+                    nCpf.requestFocus();
+                    nCpf.setError("CPF inválido.");
                 }
                 if (txtTelefone.equals("")) {
                     nTelefone.requestFocus();
