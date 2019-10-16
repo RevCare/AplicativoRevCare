@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 
 import com.example.myapplication.R;
 import com.example.myapplication.servicosAgendados;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
+        final Switch aSwitch = findViewById(R.id.chaveClienteProfissonal);
 
         //Button botao_cadastrar = findViewById(R.id.botaoCadastrar);
         Button botao_entrar = findViewById(R.id.botaoEntrar);
@@ -35,9 +37,16 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, CadastroUsuarioActivity.class));
-            }
+                if (aSwitch.isChecked()) {
+                    startActivity(new Intent(MainActivity.this, servicosAgendados.class));
 
+                }
+                else{
+                    startActivity(new Intent(MainActivity.this, CadastroUsuarioActivity.class));
+
+                }
+
+            }
         });
 
         botao_entrar.setOnClickListener(new View.OnClickListener() {
