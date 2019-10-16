@@ -1,84 +1,82 @@
-//package com.example.myapplication.persistencia;
-//
-//import android.content.ContentValues;
-//import android.content.Context;
-//import android.database.sqlite.SQLiteDatabase;
-//import android.database.sqlite.SQLiteOpenHelper;
-//
-//import androidx.annotation.Nullable;
-//
-//import com.example.myapplication.usuario.dominio.Usuario;
-//
-//public class BancoDeDados extends SQLiteOpenHelper {
-//
-//    private static final int VERSAO_BANCO = 1;
-//    private static final String BANCO_USUARIO = "bd_usuario";
-//
-//    // TABELA USUARIO
-//
-//    private static final String TABELA_USUARIO = "tb_usuario";
-//
-//    private static final String COLUNA_ID12 = "id";
-//    private static final String COLUNA_NOME = "nome";
-//    private static final String COLUNA_NASCIMENTO = "nascimento";
-//    private static final String COLUNA_TELEFONE = "telefone";
-//    private static final String COLUNA_ENDERECO = "endereco";
-//    private static final String COLUNA_EMAIL = "email";
-//    private static final String COLUNA_CPF = "cpf";
-//
-//    //TABELA PROFISSIONAL
-//
-//    private static final String TABELA_PROFISSIONAL = "tb_profissional";
-//
-//    private static final String COLUNA_ID = "id";
-//    private static final String COLUNA_NOME = "nome";
-//    private static final String COLUNA_NASCIMENTO = "nascimento";
-//    private static final String COLUNA_TELEFONE = "telefone";
-//    private static final String COLUNA_ENDERECO = "endereco";
-//    private static final String COLUNA_EMAIL = "email";
-//    private static final String COLUNA_CPF = "cpf";
-//    private static final String COLUNA_CERT = "certificacao";
-//
-//
-//
-//
-//    public BancoDeDados(@Nullable Context context) {
-//        super(context, BANCO_USUARIO, null, VERSAO_BANCO);
-//    }
-//
-//    @Override
-//    public void onCreate(SQLiteDatabase db) {
-////SEPARAR EM METODOS - N ESQUECER
-//        String QUERY_USUARIO = "CREATE TABLE " + TABELA_USUARIO + "("
-//                + COLUNA_ID12  + "INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUNA_NOME + " TEXT,"
-//                + COLUNA_NASCIMENTO + " TEXT" + COLUNA_TELEFONE + " TEXT" + COLUNA_ENDERECO
-//                + " TEXT" + COLUNA_EMAIL + " TEXT" + COLUNA_CPF + " TEXT)";
-//        db.execSQL(QUERY_USUARIO);
-////SEPARAR EM METODOS - N ESQUECER
-//        String QUERY_PROFISSIONAL = "CREATE TABLE " + TABELA_PROFISSIONAL + "("
-//                + COLUNA_ID  + "INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUNA_NOME + " TEXT,"
-//                + COLUNA_NASCIMENTO + " TEXT" + COLUNA_TELEFONE + " TEXT" + COLUNA_ENDERECO
-//                + " TEXT" + COLUNA_EMAIL + " TEXT" + COLUNA_CPF + " TEXT" + COLUNA_CERT + " TEXT)";
-//        db.execSQL(QUERY_PROFISSIONAL);
-//    }
-//
-//    @Override
-//    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-//
-//    }
-//    // TESTANDO ADD provavel em UsuarioDAO
-//    void addUsuario (Usuario usuario){
-//
-//        SQLiteDatabase db = this.getWritableDatabase();
-//
-//        ContentValues values = new ContentValues();
-//
-//        values.put(COLUNA_NOME, usuario.getNome());
-//        values.put(COLUNA_NASCIMENTO, usuario.getNascimento());
-//        values.put(COLUNA_TELEFONE, usuario.getTelefone());
-//        values.put(COLUNA_ENDERECO, usuario.getEndereco());
-//        values.put(COLUNA_EMAIL, usuario.getEmail());
-//        values.put(COLUNA_CPF, usuario.getCpf());
-//
-//    }
-//}
+package com.example.myapplication.persistencia;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+
+public class BancoDeDados extends SQLiteOpenHelper {
+
+    private static final String DB_NAME = "revcare.bd";
+    private static final int DB_VERSION = 1;
+
+
+    public static final String TABELA_USUARIO = "Tabela_Usuario";
+    public static final String COL_ID_USUARIO = "id";
+    public static final String COL_NOME_USUARIO = "nome";
+    public static final String COL_NASCIMENTO_USUARIO = "nascimento";
+    public static final String COL_TELEFONE_USUARIO = "telefone";
+    public static final String COL_EMAIL_USUARIO = "email";
+    public static final String COL_CPF_USUARIO = "cpf";
+
+    public static final String TABELA_PROFISSIONAL = "Tabela_Usuario";
+    public static final String COL_ID_PROFISSIONAL = "id";
+    public static final String COL_NOME_PROFISSIONAL = "nome";
+    public static final String COL_NASCIMENTO_PROFISSIONAL = "nascimento";
+    public static final String COL_TELEFONE_PROFISSIONAL = "telefone";
+    public static final String COL_EMAIL_PROFISSIONAL = "email";
+    public static final String COL_CPF_PROFISSIONAL = "cpf";
+    public static final String COL_REGULAMENTACAO_PROFISSIONAL= "regulamentacao";
+
+    private static final String SQL_CREATE_TABLE = "CREATE TABLE %1$s ";
+    private static final String SQL_INTEGER_AUTOINCREMENT = "  %2$s INTEGER PRIMARY KEY AUTOINCREMENT, ";
+
+    public BancoDeDados(Context context) {
+        super(context, DB_NAME, null, DB_VERSION);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        createTableUsuario(db);
+        createTableProfissional(db);
+    }
+    private void createTableUsuario(SQLiteDatabase db) {
+        String sqlTbUsuario = SQL_CREATE_TABLE + "( " +
+                SQL_INTEGER_AUTOINCREMENT +
+                "  %3$s TEXT NOT NULL, " +
+                "  %4$s TEXT NOT NULL, " +
+                " %5$s TEXT NOT NULL, " +
+                " %6$s TEXT NOT NULL, " +
+                " %7$s TEXT NOT NULL, " +
+
+                ");";
+        sqlTbUsuario = String.format(sqlTbUsuario,
+                TABELA_USUARIO, COL_ID_USUARIO, COL_NOME_USUARIO,
+                COL_NASCIMENTO_USUARIO, COL_TELEFONE_USUARIO,
+                COL_EMAIL_USUARIO, COL_CPF_USUARIO);
+        db.execSQL(sqlTbUsuario);
+    }
+    private void createTableProfissional(SQLiteDatabase db) {
+        String sqlTbProfissional = SQL_CREATE_TABLE + "( " +
+                SQL_INTEGER_AUTOINCREMENT +
+                "  %3$s TEXT NOT NULL, " +
+                "  %4$s TEXT NOT NULL, " +
+                " %5$s TEXT NOT NULL, " +
+                " %6$s TEXT NOT NULL, " +
+                " %7$s TEXT NOT NULL, " +
+                " %8$s TEXT NOT NULL, " +
+
+                ");";
+        sqlTbProfissional= String.format(sqlTbProfissional,
+                TABELA_USUARIO, COL_ID_USUARIO, COL_NOME_PROFISSIONAL,
+                COL_NASCIMENTO_PROFISSIONAL, COL_TELEFONE_PROFISSIONAL,
+                COL_EMAIL_PROFISSIONAL, COL_CPF_PROFISSIONAL, COL_REGULAMENTACAO_PROFISSIONAL);
+        db.execSQL(sqlTbProfissional);
+    }
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        db.execSQL("DROP TABLE IF EXISTS "+TABELA_USUARIO);
+        onCreate(db);
+
+    }
+}
