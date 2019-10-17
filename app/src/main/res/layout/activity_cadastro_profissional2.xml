@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gui.CadastroUsuarioActivity">
+    tools:context=".infra.gui.CadastroUsuarioActivity">
 
 
     <ScrollView
@@ -29,14 +29,14 @@
                 />
 
             <Button
-                android:id="@+id/botaoContinuarCadastro"
+                android:id="@+id/botaoFinalizarCadastro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="70dp"
                 android:layout_marginTop="560dp"
                 android:layout_marginRight="70dp"
                 android:background="#AF0D25"
-                android:text="Continuar cadastro"
+                android:text="Finalizar cadastro"
                 android:textColor="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.182"
@@ -65,7 +65,7 @@
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginTop="360dp"
                 android:ems="10"
-                android:hint="Digite seu endereco"
+                android:hint="Digite seu Certificado"
                 android:inputType="textPersonName"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"

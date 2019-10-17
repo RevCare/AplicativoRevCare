@@ -1,4 +1,4 @@
-package com.example.myapplication.gui;
+package com.example.myapplication.infra.gui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,20 +11,18 @@ import android.widget.EditText;
 import com.example.myapplication.R;
 import com.example.myapplication.usuario.dominio.Usuario;
 
-
-public class CadastroUsuarioActivity extends AppCompatActivity {
+public class CadastroProfissionalActivity extends AppCompatActivity {
 
     private EditText nNome;
     private EditText nDataNascimento;
     private EditText nEndereco;
     private EditText nCpf;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_cadastro_profissional);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_cadastro_usuario);
         Button botao_continuar_cadastro = findViewById(R.id.botaoContinuarCadastro);
         botao_continuar_cadastro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +37,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
 
                 boolean valido = validacao(nNome, nDataNascimento, nCpf, nEndereco);
                 if (valido) {
-                    startActivity(new Intent(CadastroUsuarioActivity.this, CadastroUsuarioActivity2.class));
+                    startActivity(new Intent(CadastroProfissionalActivity.this, CadastroProfissionalActivity2.class));
                 }
 
 
@@ -51,7 +49,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
 
 
 
-            public boolean validacao(EditText nNome,EditText nDataNascimento,EditText nCpf,EditText nEndereco) {
+            public boolean validacao(EditText nNome, EditText nDataNascimento, EditText nCpf, EditText nEndereco) {
 
 
                 boolean teveCampoVazio = false;

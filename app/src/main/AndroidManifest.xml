@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".gui.CadastroProfissionalActivity2"></activity>
-        <activity android:name=".gui.CadastroProfissionalActivity" />
-        <activity android:name=".gui.CadastroUsuarioActivity2" />
-        <activity android:name=".gui.ServicosAgendados" />
-        <activity android:name=".gui.CadastroUsuarioActivity" />
-        <activity android:name=".gui.MainActivity">
+        <activity android:name=".infra.gui.CadastroProfissionalActivity2"></activity>
+        <activity android:name=".infra.gui.CadastroProfissionalActivity" />
+        <activity android:name=".infra.gui.CadastroUsuarioActivity2" />
+        <activity android:name=".infra.gui.ServicosAgendados" />
+        <activity android:name=".infra.gui.CadastroUsuarioActivity" />
+        <activity android:name=".infra.gui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

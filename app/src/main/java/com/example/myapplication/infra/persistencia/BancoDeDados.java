@@ -1,4 +1,4 @@
-package com.example.myapplication.persistencia;
+package com.example.myapplication.infra.persistencia;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

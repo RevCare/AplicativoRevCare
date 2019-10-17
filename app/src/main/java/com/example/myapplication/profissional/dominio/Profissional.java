@@ -1,4 +1,4 @@
-package com.example.myapplication.usuario.dominio;
+package com.example.myapplication.profissional.dominio;
 
 public class Profissional {
     private long id;
@@ -9,7 +9,12 @@ public class Profissional {
     private String nascimento;
     private String endereco;
     private String senha;
+    private String certificado;
     private String confirmaSenha;
+
+    public Profissional(String certificado) {
+        this.certificado = certificado;
+    }
 
     public String getConfirmaSenha() {
         return confirmaSenha;

@@ -1,4 +1,4 @@
-package com.example.myapplication.gui;
+package com.example.myapplication.infra.gui;
 
 import androidx.appcompat.app.AppCompatActivity;
 

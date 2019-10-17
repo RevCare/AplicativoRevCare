@@ -1,6 +1,4 @@
-package com.example.myapplication.gui;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.myapplication.infra.gui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,16 +6,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.myapplication.R;
 import com.example.myapplication.usuario.dominio.Usuario;
 
-public class CadastroProfissionalActivity2 extends AppCompatActivity {
+public class CadastroUsuarioActivity2 extends AppCompatActivity {
 
     private EditText nEmail;
     private EditText nTelefone;
     private EditText nSenha;
     private EditText nConfirmaSenha;
-    private EditText nCertificado;
 
 
     @Override
@@ -33,19 +32,18 @@ public class CadastroProfissionalActivity2 extends AppCompatActivity {
                 nEmail = findViewById(R.id.emailTextField);
                 nSenha = findViewById(R.id.senhaTextField);
                 nConfirmaSenha = findViewById(R.id.confirmarSenhaTextField);
-                nCertificado = findViewById(R.id.certificadoTextField);
 
-                boolean valido = validacaoParte1(nTelefone, nEmail, nSenha, nConfirmaSenha);
+                boolean valido = validacao(nTelefone, nEmail, nSenha, nConfirmaSenha);
                 if (valido) {
                     Usuario usuario = new Usuario();
                     preencheObjeto(usuario);
-                    startActivity(new Intent(CadastroProfissionalActivity2.this, ServicosAgendados.class));
+                    startActivity(new Intent(CadastroUsuarioActivity2.this, ServicosAgendados.class));
 
                 }
 
             }
 
-            public boolean validacaoParte1(EditText nTelefone, EditText nEmail, EditText nSenha, EditText nConfirmarSenha) {
+            public boolean validacao(EditText nTelefone, EditText nEmail, EditText nSenha, EditText nConfirmarSenha) {
 
 
                 boolean teveCampoVazio = false;
@@ -53,7 +51,6 @@ public class CadastroProfissionalActivity2 extends AppCompatActivity {
                 String txtEmail = nEmail.getText().toString().trim();
                 String txtSenha = nSenha.getText().toString().trim();
                 String txtConfirmarSenha = nConfirmarSenha.getText().toString().trim();
-                String txtCertificado = nCertificado.getText().toString().trim();
 
 
                 if (txtEmail.equals("")) {

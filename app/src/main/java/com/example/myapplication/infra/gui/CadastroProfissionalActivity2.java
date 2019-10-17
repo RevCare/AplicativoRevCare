@@ -1,4 +1,6 @@
-package com.example.myapplication.gui;
+package com.example.myapplication.infra.gui;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,26 +8,23 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.myapplication.R;
 import com.example.myapplication.usuario.dominio.Usuario;
 
-public class CadastroUsuarioActivity2 extends AppCompatActivity {
-
+public class CadastroProfissionalActivity2 extends AppCompatActivity {
     private EditText nEmail;
     private EditText nTelefone;
     private EditText nSenha;
     private EditText nConfirmaSenha;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_cadastro_profissional2);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_cadastro_usuario_2);
         Button botao_finalizar_cadastro = findViewById(R.id.botaoFinalizarCadastro);
         botao_finalizar_cadastro.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 nTelefone = findViewById(R.id.telefoneTextField);
@@ -34,10 +33,10 @@ public class CadastroUsuarioActivity2 extends AppCompatActivity {
                 nConfirmaSenha = findViewById(R.id.confirmarSenhaTextField);
 
                 boolean valido = validacao(nTelefone, nEmail, nSenha, nConfirmaSenha);
+                //A VALIDAÇÃO TA DANDO ALGO ERRADO, TEM QUE AJEITAR. SE TIRAR ESSE IF E SÓ DEIXAR O START ACTIVITY FUNCIONA.
                 if (valido) {
-                    Usuario usuario = new Usuario();
-                    preencheObjeto(usuario);
-                    startActivity(new Intent(CadastroUsuarioActivity2.this, ServicosAgendados.class));
+
+                    startActivity(new Intent(CadastroProfissionalActivity2.this, ServicosAgendados.class));
 
                 }
 
