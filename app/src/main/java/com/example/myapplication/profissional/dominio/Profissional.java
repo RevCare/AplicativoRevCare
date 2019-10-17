@@ -12,7 +12,11 @@ public class Profissional {
     private String certificado;
     private String confirmaSenha;
 
-    public Profissional(String certificado) {
+    public String getCertificado() {
+        return certificado;
+    }
+
+    public void setCertificado(String certificado) {
         this.certificado = certificado;
     }
 
@@ -31,8 +35,6 @@ public class Profissional {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
-
 
     public String getEmail() {
         return email;

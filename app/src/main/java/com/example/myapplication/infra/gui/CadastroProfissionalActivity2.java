@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.myapplication.R;
+import com.example.myapplication.profissional.dominio.Profissional;
 import com.example.myapplication.usuario.dominio.Usuario;
 
 public class CadastroProfissionalActivity2 extends AppCompatActivity {
@@ -35,7 +36,7 @@ public class CadastroProfissionalActivity2 extends AppCompatActivity {
                 boolean valido = validacao(nTelefone, nEmail, nSenha, nConfirmaSenha);
                 //A VALIDAÇÃO TA DANDO ALGO ERRADO, TEM QUE AJEITAR. SE TIRAR ESSE IF E SÓ DEIXAR O START ACTIVITY FUNCIONA.
                 if (valido) {
-
+                    Profissional profissional = new Profissional();
                     startActivity(new Intent(CadastroProfissionalActivity2.this, ServicosAgendados.class));
 
                 }
@@ -91,11 +92,11 @@ public class CadastroProfissionalActivity2 extends AppCompatActivity {
 
             }
 
-            public void preencheObjeto(Usuario usuario) {
+            public void preencheObjeto(Profissional profissional) {
 
-                usuario.setNome(nEmail.getText().toString().trim());
-                usuario.setNascimento(nTelefone.getText().toString().trim());
-                usuario.setEndereco(nSenha.getText().toString().trim());
+                profissional.setNome(nEmail.getText().toString().trim());
+                profissional.setNascimento(nTelefone.getText().toString().trim());
+                profissional.setEndereco(nSenha.getText().toString().trim());
 
             }
 
