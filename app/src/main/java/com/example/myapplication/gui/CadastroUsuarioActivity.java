@@ -42,6 +42,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                     startActivity(new Intent(CadastroUsuarioActivity.this, CadastroUsuarioActivity2.class));
                 }
 
+
             }
 
 
