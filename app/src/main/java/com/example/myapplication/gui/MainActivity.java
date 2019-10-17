@@ -6,11 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Switch;
 
 import com.example.myapplication.R;
-import com.example.myapplication.servicosAgendados;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (aSwitch.isChecked()) {
-                    startActivity(new Intent(MainActivity.this, servicosAgendados.class));
+                    startActivity(new Intent(MainActivity.this, ServicosAgendados.class));
 
                 }
                 else{
@@ -53,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent tela = new Intent(MainActivity.this, servicosAgendados.class);
+                Intent tela = new Intent(MainActivity.this, ServicosAgendados.class);
                 startActivity(tela);
 
             }

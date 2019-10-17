@@ -29,14 +29,14 @@
                 />
 
             <Button
-                android:id="@+id/botaoContinuarCadastro"
+                android:id="@+id/botaoFinalizarCadastro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="70dp"
-                android:layout_marginTop="500dp"
+                android:layout_marginTop="560dp"
                 android:layout_marginRight="70dp"
                 android:background="#AF0D25"
-                android:text="Continuar cadastro"
+                android:text="Finalizar cadastro"
                 android:textColor="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.182"
@@ -44,14 +44,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/nomeTextField"
+                android:id="@+id/telefoneTextField"
                 android:layout_width="match_parent"
                 android:layout_height="37dp"
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginTop="200dp"
                 android:ems="10"
-                android:hint="@string/digite_seu_nome"
-                android:inputType="textPersonName"
+                android:hint="@string/digite_seu_telefone"
+                android:inputType="phone"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.254"
@@ -59,29 +59,29 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/enderecoTextField"
+                android:id="@+id/senhaTextField"
                 android:layout_width="match_parent"
                 android:layout_height="37dp"
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginTop="360dp"
                 android:ems="10"
-                android:hint="Digite seu endereco"
-                android:inputType="textPersonName"
+                android:hint="@string/digite_sua_senha"
+                android:inputType="textPassword"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.233"
+                app:layout_constraintHorizontal_bias="0.245"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/cpfTextField"
+                android:id="@+id/confirmarSenhaTextField"
                 android:layout_width="match_parent"
                 android:layout_height="37dp"
                 android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="440dp"
+                android:layout_marginTop="400dp"
                 android:ems="10"
-                android:hint="@string/digite_seu_cpf"
-                android:inputType="number"
+                android:hint="@string/confirma_senha"
+                android:inputType="textPassword"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.245"
@@ -89,12 +89,12 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/labelNome"
+                android:id="@+id/labelTelefone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginTop="180dp"
-                android:text="@string/nome"
+                android:text="@string/telefone"
                 android:textColor="#0A0404"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -103,14 +103,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/labelDataNascimento"
+                android:id="@+id/caixatxtEmailCadastro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="260dp"
-                android:text="@string/data_de_nascimento"
+                android:text="@string/e_mail"
                 android:textColor="#050101"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -121,38 +121,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="420dp"
-                android:text="@string/cpf"
+                android:layout_marginTop="340dp"
+                android:text="@string/digite_sua_senha"
                 android:textColor="#0F0000"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.075"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/labelEndereco"
-                android:layout_width="101dp"
-                android:layout_height="23dp"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="340dp"
-                android:text="@string/endereco"
-                android:textColor="#090101"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.077"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <EditText
-                android:id="@+id/dataNascimentoTextField"
+                android:id="@+id/emailTextField"
                 android:layout_width="match_parent"
                 android:layout_height="37dp"
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginTop="280dp"
                 android:ems="10"
-                android:hint="vou fazer um spinner aq"
-                android:inputType="date"
+                android:hint="@string/digite_seu_e_mail"
+                android:inputType="textEmailAddress"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.241"

@@ -1,10 +1,12 @@
-package com.example.myapplication;
+package com.example.myapplication.gui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class servicosAgendados extends AppCompatActivity {
+import com.example.myapplication.R;
+
+public class ServicosAgendados extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

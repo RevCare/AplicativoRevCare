@@ -29,14 +29,14 @@
                 />
 
             <Button
-                android:id="@+id/botaoFinalizarCadastro"
+                android:id="@+id/botaoContinuarCadastro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="70dp"
                 android:layout_marginTop="500dp"
                 android:layout_marginRight="70dp"
                 android:background="#AF0D25"
-                android:text="continuar_cadastro"
+                android:text="Continuar cadastro"
                 android:textColor="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.182"

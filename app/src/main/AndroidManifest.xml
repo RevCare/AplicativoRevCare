@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".servicosAgendados"></activity>
+        <activity android:name=".gui.CadastroUsuarioActivity2"></activity>
+        <activity android:name=".gui.ServicosAgendados"></activity>
         <activity android:name=".gui.CadastroUsuarioActivity" />
         <activity android:name=".gui.MainActivity">
             <intent-filter>

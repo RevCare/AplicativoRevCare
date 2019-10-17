@@ -18,4 +18,5 @@
     <string name="cadastro_de_usuario">cadastro_de_usuario</string>
     <string name="digite_sua_senha">Digite sua senha</string>
     <string name="confirma_senha">Confirme sua senha</string>
+    <string name="Certificado">Certificado (Opcional)</string>
 </resources>
