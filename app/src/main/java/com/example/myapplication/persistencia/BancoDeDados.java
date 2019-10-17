@@ -68,14 +68,15 @@ public class BancoDeDados extends SQLiteOpenHelper {
 
                 ");";
         sqlTbProfissional= String.format(sqlTbProfissional,
-                TABELA_USUARIO, COL_ID_USUARIO, COL_NOME_PROFISSIONAL,
+                TABELA_PROFISSIONAL, COL_ID_PROFISSIONAL, COL_NOME_PROFISSIONAL,
                 COL_NASCIMENTO_PROFISSIONAL, COL_TELEFONE_PROFISSIONAL,
                 COL_EMAIL_PROFISSIONAL, COL_CPF_PROFISSIONAL, COL_REGULAMENTACAO_PROFISSIONAL);
         db.execSQL(sqlTbProfissional);
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL("DROP TABLE IF EXISTS "+TABELA_USUARIO);
+        db.execSQL("DROP TABLE IF EXISTS "+ TABELA_USUARIO);
+        db.execSQL("DROP TABLE IF EXISTS "+ TABELA_PROFISSIONAL);
         onCreate(db);
 
     }
