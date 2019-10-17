@@ -1,2 +1,2 @@
-include ':app'
+include ':RevCare'
 rootProject.name='My Application'
