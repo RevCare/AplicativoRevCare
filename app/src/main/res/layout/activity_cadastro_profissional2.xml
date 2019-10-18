@@ -44,7 +44,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/nomeTextField"
+                android:id="@+id/telefoneTextField"
                 android:layout_width="match_parent"
                 android:layout_height="37dp"
                 android:layout_marginHorizontal="15dp"
@@ -74,7 +74,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/caixatxtSenhaLogin"
+                android:id="@+id/caixaTxtSenhaLogin"
                 android:layout_width="match_parent"
                 android:layout_height="37dp"
                 android:layout_marginHorizontal="15dp"
@@ -88,7 +88,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
             <EditText
-                android:id="@+id/confirmar_senha"
+                android:id="@+id/caixaConfirmaSenha"
                 android:layout_width="match_parent"
                 android:layout_height="37dp"
                 android:layout_marginHorizontal="15dp"
@@ -117,7 +117,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/enderecoTextField"
+                android:id="@+id/emailLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
@@ -131,7 +131,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/labelCpf"
+                android:id="@+id/labelSenha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="15dp"
@@ -159,7 +159,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/dataNascimentoTextField"
+                android:id="@+id/emailTextField"
                 android:layout_width="match_parent"
                 android:layout_height="37dp"
                 android:layout_marginHorizontal="15dp"
