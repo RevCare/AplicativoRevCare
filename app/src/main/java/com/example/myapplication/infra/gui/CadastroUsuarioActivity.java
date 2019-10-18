@@ -86,6 +86,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                         nCpf.equals("88888888888") || nCpf.equals("99999999999") ||
                         (nCpf.length() != 11))){
                     nCpf.requestFocus();
+                    teveCampoVazio = true;
                     nCpf.setError("CPF inválido.");
                 }
                 if (txtEndereco.equals("")) {

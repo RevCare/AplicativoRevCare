@@ -151,7 +151,7 @@
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginTop="280dp"
                 android:ems="10"
-                android:hint="vou fazer um spinner aq"
+                android:hint="DD/MM/AAAA"
 
                 android:inputType="date"
                 android:textSize="14sp"
