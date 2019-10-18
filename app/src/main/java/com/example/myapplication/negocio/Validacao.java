@@ -31,13 +31,13 @@ public class Validacao {
             teveCampoVazio = true;
 
         }
-        if ((nCpf.equals("00000000000") ||
-                nCpf.equals("11111111111") ||
-                nCpf.equals("22222222222") || nCpf.equals("33333333333") ||
-                nCpf.equals("44444444444") || nCpf.equals("55555555555") ||
-                nCpf.equals("66666666666") || nCpf.equals("77777777777") ||
-                nCpf.equals("88888888888") || nCpf.equals("99999999999") ||
-                (nCpf.length() != 11))){
+        if ((txtCpf.equals("00000000000") ||
+                txtCpf.equals("11111111111") ||
+                txtCpf.equals("22222222222") || txtCpf.equals("33333333333") ||
+                txtCpf.equals("44444444444") || txtCpf.equals("55555555555") ||
+                txtCpf.equals("66666666666") || txtCpf.equals("77777777777") ||
+                txtCpf.equals("88888888888") || txtCpf.equals("99999999999") ||
+                (txtCpf.length() != 11))){
             nCpf.requestFocus();
             teveCampoVazio = true;
             nCpf.setError("CPF inválido.");
@@ -106,4 +106,31 @@ public class Validacao {
         return false;
 
     }
-}
+
+    public boolean validacaoMain(EditText lCpf, EditText lSenha) {
+
+        String txtCpf = lCpf.getText().toString().trim();
+        String txtSenha = lSenha.getText().toString().trim();
+        boolean tudoOk = true;
+
+        if (txtSenha.equals("")){
+            lSenha.requestFocus();
+            tudoOk=false;
+            lSenha.setError("Senha incorreta.");
+        }
+
+
+        if ((txtCpf.equals("00000000000") ||
+                txtCpf.equals("11111111111") ||
+                txtCpf.equals("22222222222") || txtCpf.equals("33333333333") ||
+                txtCpf.equals("44444444444") || txtCpf.equals("55555555555") ||
+                txtCpf.equals("66666666666") || txtCpf.equals("77777777777") ||
+                txtCpf.equals("88888888888") || txtCpf.equals("99999999999") ||
+                (txtCpf.length() != 11))){
+            lCpf.requestFocus();
+            tudoOk=false;
+            lCpf.setError("CPF inválido.");
+
+    }
+        return tudoOk;
+}}

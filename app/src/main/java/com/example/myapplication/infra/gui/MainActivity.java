@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Switch;
 
 import com.example.myapplication.R;
+import com.example.myapplication.negocio.Validacao;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,9 +29,10 @@ public class MainActivity extends AppCompatActivity {
          lSenha = findViewById(R.id.caixatxtSenhaLogin);
 
 
-        final Switch aSwitch = findViewById(R.id.chaveClienteProfissonal);
 
-        //Button botao_cadastrar = findViewById(R.id.botaoCadastrar);
+
+
+        final Switch aSwitch = findViewById(R.id.chaveClienteProfissonal);
         Button botao_entrar = findViewById(R.id.botaoEntrar);
         Button botao_cadastrar = findViewById(R.id.botaoCadastro);
 
@@ -56,9 +58,13 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent tela = new Intent(MainActivity.this, ServicosAgendados.class);
-                startActivity(tela);
 
+                Validacao valida = new Validacao();
+
+                if (valida.validacaoMain(lCpf, lSenha)) {
+                    Intent tela = new Intent(MainActivity.this, ServicosAgendados.class);
+                    startActivity(tela);
+                }
             }
 
         });
