@@ -19,7 +19,7 @@ public class BancoDeDados extends SQLiteOpenHelper {
     public static final String COL_EMAIL_USUARIO = "email";
     public static final String COL_CPF_USUARIO = "cpf";
 
-    public static final String TABELA_PROFISSIONAL = "Tabela_Usuario";
+    public static final String TABELA_PROFISSIONAL = "Tabela_Profissional";
     public static final String COL_ID_PROFISSIONAL = "id";
     public static final String COL_NOME_PROFISSIONAL = "nome";
     public static final String COL_NASCIMENTO_PROFISSIONAL = "nascimento";
@@ -30,6 +30,7 @@ public class BancoDeDados extends SQLiteOpenHelper {
 
     private static final String SQL_CREATE_TABLE = "CREATE TABLE %1$s ";
     private static final String SQL_INTEGER_AUTOINCREMENT = "  %2$s INTEGER PRIMARY KEY AUTOINCREMENT, ";
+
 
     public BancoDeDados(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
