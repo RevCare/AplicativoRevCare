@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">RevCare</string>
     <string name="digite_seu_nome">Digite seu nome</string>
     <string name="digite_seu_telefone">Digite seu telefone</string>
     <string name="digite_seu_endere_o">Digite seu endereço</string>
