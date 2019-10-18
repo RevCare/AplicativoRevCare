@@ -18,6 +18,7 @@ public class BancoDeDados extends SQLiteOpenHelper {
     public static final String COL_TELEFONE_USUARIO = "telefone";
     public static final String COL_EMAIL_USUARIO = "email";
     public static final String COL_CPF_USUARIO = "cpf";
+    public static final String COL_SENHA_USUARIO = "senha";
 
     public static final String TABELA_PROFISSIONAL = "Tabela_Profissional";
     public static final String COL_ID_PROFISSIONAL = "id";
@@ -27,6 +28,7 @@ public class BancoDeDados extends SQLiteOpenHelper {
     public static final String COL_EMAIL_PROFISSIONAL = "email";
     public static final String COL_CPF_PROFISSIONAL = "cpf";
     public static final String COL_REGULAMENTACAO_PROFISSIONAL= "regulamentacao";
+    public static final String COL_SENHA_PROFISSIONAL = "senha";
 
     private static final String SQL_CREATE_TABLE = "CREATE TABLE %1$s ";
     private static final String SQL_INTEGER_AUTOINCREMENT = "  %2$s INTEGER PRIMARY KEY AUTOINCREMENT, ";
@@ -49,12 +51,13 @@ public class BancoDeDados extends SQLiteOpenHelper {
                 " %5$s TEXT NOT NULL, " +
                 " %6$s TEXT NOT NULL, " +
                 " %7$s TEXT NOT NULL, " +
+                " %8$s TEXT NOT NULL, " +
 
                 ");";
         sqlTbUsuario = String.format(sqlTbUsuario,
                 TABELA_USUARIO, COL_ID_USUARIO, COL_NOME_USUARIO,
                 COL_NASCIMENTO_USUARIO, COL_TELEFONE_USUARIO,
-                COL_EMAIL_USUARIO, COL_CPF_USUARIO);
+                COL_EMAIL_USUARIO, COL_CPF_USUARIO, COL_SENHA_USUARIO);
         db.execSQL(sqlTbUsuario);
     }
     private void createTableProfissional(SQLiteDatabase db) {
@@ -66,12 +69,13 @@ public class BancoDeDados extends SQLiteOpenHelper {
                 " %6$s TEXT NOT NULL, " +
                 " %7$s TEXT NOT NULL, " +
                 " %8$s TEXT NOT NULL, " +
+                " %9$s TEXT NOT NULL, " +
 
                 ");";
         sqlTbProfissional= String.format(sqlTbProfissional,
                 TABELA_PROFISSIONAL, COL_ID_PROFISSIONAL, COL_NOME_PROFISSIONAL,
                 COL_NASCIMENTO_PROFISSIONAL, COL_TELEFONE_PROFISSIONAL,
-                COL_EMAIL_PROFISSIONAL, COL_CPF_PROFISSIONAL, COL_REGULAMENTACAO_PROFISSIONAL);
+                COL_EMAIL_PROFISSIONAL, COL_CPF_PROFISSIONAL, COL_REGULAMENTACAO_PROFISSIONAL,COL_SENHA_PROFISSIONAL);
         db.execSQL(sqlTbProfissional);
     }
     @Override
